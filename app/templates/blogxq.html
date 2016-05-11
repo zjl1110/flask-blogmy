@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>{{title}}</h3>----{{time}}----|<br><hr>
+{{body}}<br><hr>
+<form method="post" action="">
+	{{form.hidden_tag()}}
+	<p>
+		{{form.plbody(size=60)}}<br>
+	</p>
+	<p><input type="submit" value="OK"></p>
+</form>
+<br><hr>
+{%for pinglbody in pinglbodys%}
+{{pinglbody.plbody}}<br><hr>
+
+{% endfor %}
+
+{% endblock %}

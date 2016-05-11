@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for tilte in tiltes %}
+<a href="{{url_for("dels",id=tilte.id)}}">delete</a>
+<a href="{{url_for("xxx",id=tilte.id)}}">
+	<div>
+		<h2>{{tilte.tilte}}</h2>
+			<div class='slh'>{{tilte.body}}</div><br>
+			<hr>
+	</div>
+</a>
+<style type="text/css">
+	.slh{
+		width: 90%;
+		height: 20px;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+	}
+	a{
+		text-decoration: none;
+	}
+</style>
+{% endfor %}
+
+
+{% endblock %}

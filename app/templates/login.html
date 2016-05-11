@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post" action="login">
+	{{form.hidden_tag()}}
+	<p>
+		user:<br>
+		{{form.username}}<br>
+		password:<br>
+		{{form.userpassword}}
+		<span style="color:red;">{{error}}</span>
+	</p>
+	<p><input type="submit" value="Sign In"></p>
+</form>
+{% with messages=get_flashed_messages() %}
+{% if messages %}
+<ul>
+{% for message in messages %}
+<li>{{message}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+{% endwith %}
+{% endblock %}

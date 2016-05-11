@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% with messages=get_flashed_messages() %}
+{% if messages %}
+<ul>
+{% for message in messages %}
+<li>{{message}}</li>
+</ul>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<form method="post" action="edit">
+	{{form.hidden_tag()}}
+	<p>
+		title:<br>
+		{{form.blogtilte(size=60)}}<br>
+		body:<br>
+		
+		{{form.blogbody(cols=80,rows=20)}}
+		
+		<span style="color:red;">{{error}}</span>
+	</p>
+	<p><input type="submit" value="Edit"></p>
+</form>
+
+
+{% endblock %}

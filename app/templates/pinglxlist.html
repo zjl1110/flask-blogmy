@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for tilte in tiltes %}
+<a href="{{url_for("pingldels",id=tilte.id)}}">delete</a>
+
+<div class='slh'>{{tilte.plbody}}</div><br>
+			<hr>
+
+
+<style type="text/css">
+	.slh{
+		width: 90%;
+		height: 20px;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+	}
+	a{
+		text-decoration: none;
+	}
+</style>
+{% endfor %}
+
+
+{% endblock %}
